@@ -17,15 +17,15 @@ The project folder contains:
 First create demo_database by running the command below.
 
 ```bash
-user@user-pc:~/project_folder$ python3 demo_database.py
+python3 demo_database.py
 ```
 
 Then run the following commands.
 
 ```bash
-user@user-pc:~/project_folder$ export FLASK_APP=demo_app.py
-user@user-pc:~/project_folder$ export FLASK_ENVIRONMENT=development
-user@user-pc:~/project_folder$ flask run
+export FLASK_APP=demo_app.py
+export FLASK_ENVIRONMENT=development
+flask run
 ```
 
 Then below links will work.

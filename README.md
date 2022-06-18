@@ -28,7 +28,7 @@ user@user-pc:~/project_folder$ export FLASK_ENVIRONMENT=development
 user@user-pc:~/project_folder$ flask run
 ```
 
-Then below links shoud work.
+Then below links will work.
 - http://127.0.0.1:5000/users/1/followers
 - http://127.0.0.1:5000/users/2/followers
 - http://127.0.0.1:5000/users/3/followers
@@ -45,5 +45,5 @@ I think the database schema is correct, and can scale, however I am aware that t
 
 3. How would you modify your implementation to support other types of followers than just Users?
 
-Currently I use 2 tables to support the API. My solution relies on a "one-to-many" relationship between ("users" and "relationships").
-I would extend my solution with another table called "brands", and set up a "many-to-many" relationship between users and brands through "relationships".
+Currently I use 2 tables to support the API. My solution relies on a one-to-many relationship between ("users" and "relationships").
+To allow for brands to follow, I would extend my solution with another table called "brands", and set up a "many-to-many" relationship between users and brands through a one-to-many between "users and "relationships", and another one-to-many between "brands" and "relationship".

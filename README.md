@@ -45,5 +45,4 @@ I think the database schema is correct, and can scale, however I am aware that t
 
 3. How would you modify your implementation to support other types of followers than just Users?
 
-Currently I use 2 tables to support the API. My solution relies on a one-to-many relationship between ("users" and "relationships").
-To allow for brands to follow, I would extend my solution with another table called "brands", and set up a "many-to-many" relationship between users and brands through a one-to-many between "users and "relationships", and another one-to-many between "brands" and "relationship".
+To allow for brands to follow, I would extend my solution by adding a 3rd table called "brands", and set up a "many-to-many" relationship between users and brands through the "relationships" table. Moreover, I would add another foreign key column in "relationship" that references brand.id, then I would proceed by making the follower column -it references user.id.-, as well as the new brand_follower column -it would reference brand.id- as nullable foreign keys. Lastly, I would implement a check to make sure, that one of the columns is not null.
